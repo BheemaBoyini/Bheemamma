@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Coding Project</title>
+    <title>My Updated Coding Project</title>
     <!-- Use Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -19,9 +19,24 @@
             font-weight: 800;
             letter-spacing: -2px;
         }
+        .welcome-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center">
+
+    <!-- Welcome Message -->
+    <div id="welcome-banner" class="welcome-message bg-indigo-600 text-white px-8 py-4 rounded-lg shadow-lg">
+        <span class="font-semibold text-lg">Welcome Bheemamma Boyini!</span>
+    </div>
 
     <div class="container w-full p-6 space-y-8">
         <!-- Header with search button -->
@@ -59,12 +74,29 @@
 
             <!-- Tools Section -->
             <div id="tools-page" class="page-section hidden bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">My Tools</h2>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">My Coding Tools</h2>
                 <div class="space-y-4">
+                    <!-- Simple Code Editor Card -->
                     <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
                         <h3 class="text-lg font-semibold text-gray-700">Simple Code Editor</h3>
                         <p class="text-sm text-gray-500 mb-2">A basic text area to write and save your code.</p>
                         <textarea rows="10" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Start coding here..."></textarea>
+                    </div>
+                    <!-- Code Formatter Card -->
+                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-700">Code Formatter</h3>
+                        <p class="text-sm text-gray-500 mb-2">Clean up your code and improve readability.</p>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-300">
+                            Format Code
+                        </button>
+                    </div>
+                    <!-- Syntax Highlighter Card -->
+                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-700">Syntax Highlighter</h3>
+                        <p class="text-sm text-gray-500 mb-2">Visualize code with color-coded syntax.</p>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-300">
+                            Apply Highlighting
+                        </button>
                     </div>
                 </div>
             </div>
@@ -153,6 +185,18 @@
                 messageBox.classList.add('hidden');
             }, 3000); // Hide after 3 seconds
         }
+
+        // Function to show the welcome banner
+        function showWelcomeMessage() {
+            const welcomeBanner = document.getElementById('welcome-banner');
+            welcomeBanner.style.opacity = '1';
+            setTimeout(() => {
+                welcomeBanner.style.opacity = '0';
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Show the welcome message on page load
+        window.onload = showWelcomeMessage;
     </script>
 
 </body>
