@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Bheemamma's Portfolio - Deshpande Skills Trainee</title>
+    <!-- SEO Meta Tags for discoverability on Google -->
+    <meta name="description" content="A personal portfolio website for Bheemamma Boyini, an ICT trainee at Deshpande Skills. Showcasing my projects and skills in coding and technology.">
+    <meta name="keywords" content="Bheemamma, Bheemamma Boyini, Deshpande Skills, ICT, portfolio, coding, web development, projects, trainee">
+    <meta property="og:title" content="Bheemamma's Portfolio">
+    <meta property="og:description" content="Explore the projects and work of Bheemamma Boyini, an aspiring ICT professional.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,252 +18,178 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            box-sizing: border-box;
         }
-    </style>
-</head>
-<body class="bg-gray-100 font-sans">
-
-    <div class="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg">
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-6">About Me</h1>
-        
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
-            My name is [Your Name], and I am a recent graduate with a Bachelor of Arts degree. While my academic focus was on the arts, my true passion lies in the world of technology and computers. I have always been fascinated by how things work and am driven by the desire to learn new skills.
-        </p>
-
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
-            I am currently a trainee at <span class="font-semibold">Deshpande Skills</span>, where I am dedicated to developing my expertise in **ICT (Information and Communications Technology)**. This program has allowed me to dive deep into new topics and hone my skills, particularly in coding. I believe that learning is a continuous process, and I thrive on the challenge of understanding things I don't know.
-        </p>
-
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
-            My goal is to use my passion and my growing skills to create and build new things. I am excited to continue my journey in technology and look forward to what I will create next.
-        </p>
-    </div>
-
-</body>
-</html>
-
-Navigation Menu
-Bheemamma
-
-Code
-Issues
-Pull requests
-Commit 050d194
-BheemaBoyini
-BheemaBoyini
-authored
-2 days ago
-·
-·
-Verified
-Update index.html
-main
-1 parent 
-dfe32cc
- commit 
-050d194
-1 file changed
-Search within code
- 
-‎index.html
-+23
--183
-Lines changed: 23 additions & 183 deletions
-Original file line number	Diff line number	Diff line change
-@@ -1,203 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Updated Coding Project</title>
-    <!-- Use Tailwind CSS for modern styling -->
-    <title>About Me</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles for a better look */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-        .container {
-            max-width: 900px;
-        }
-        .logo-text {
-            font-weight: 800;
-            letter-spacing: -2px;
-        }
-        .welcome-message {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
+        .page-section {
+            display: none;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            pointer-events: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            box-sizing: border-box;
+        }
+        .page-section.active {
+            display: block;
+            opacity: 1;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center">
-    <!-- Welcome Message -->
-    <div id="welcome-banner" class="welcome-message bg-indigo-600 text-white px-8 py-4 rounded-lg shadow-lg">
-        <span class="font-semibold text-lg">Welcome Bheemamma Boyini!</span>
-    </div>
-    <div class="container w-full p-6 space-y-8">
-        <!-- Header with search button -->
-        <header class="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">
-            <h1 class="text-3xl font-extrabold text-gray-800 logo-text">
-                <svg class="h-8 w-8 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m14-6h2m-2 6h2M7 12h10l-1 5H8l-1-5zm-2 0a2 2 0 110-4 2 2 0 010 4zM19 12a2 2 0 110-4 2 2 0 010 4z"></path>
-                </svg>
-                My Code Lab
-            </h1>
-            <div class="flex items-center space-x-2">
-                <input type="text" id="search-input" placeholder="Search..." class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <button onclick="search()" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300">
-                    Search
-                </button>
-            </div>
-        </header>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4 sm:p-8">
 
-        <!-- Navigation Bar -->
-        <nav class="bg-white p-2 rounded-lg shadow-md flex justify-center space-x-4">
-            <button onclick="showPage('home')" class="py-2 px-4 rounded-md text-gray-700 hover:bg-gray-200 transition duration-300">Home</button>
-            <button onclick="showPage('tools')" class="py-2 px-4 rounded-md text-gray-700 hover:bg-gray-200 transition duration-300">Tools</button>
-            <button onclick="showPage('upload')" class="py-2 px-4 rounded-md text-gray-700 hover:bg-gray-200 transition duration-300">Upload Files</button>
-        </nav>
+    <!-- Main Container -->
+    <div class="container w-full max-w-4xl p-6 space-y-8">
+        <!-- Header with navigation and search -->
+        <header class="bg-white p-4 rounded-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 tracking-tight">
+                My Portfolio
+            </h1>
+            <nav class="flex flex-wrap justify-center sm:justify-end gap-2">
+                <button onclick="showPage('home')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">Home</button>
+                <button onclick="showPage('about')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">About Me</button>
+                <button onclick="showPage('projects')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">Projects</button>
+                <button onclick="showPage('uploads')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">Uploads</button>
+            </nav>
+        </header>
+
         <!-- Main Content Sections -->
         <main class="space-y-6">
             <!-- Home Page Section -->
-            <div id="home-page" class="page-section bg-white p-6 rounded-lg shadow-md">
+            <div id="home-page" class="page-section active bg-white p-6 rounded-xl shadow-lg">
                 <h2 class="text-2xl font-bold mb-4 text-center text-gray-800">Welcome to My Project!</h2>
-                <p class="text-gray-600 text-center">
-                    This is a place for all your creative ideas. You can use our tools, upload your media, and more.
+                <p class="text-gray-600 text-center text-base sm:text-lg">
+                    This is a place for all your creative ideas. You can explore my work and upload your own photos and videos.
                 </p>
             </div>
-            <!-- Tools Section -->
-            <div id="tools-page" class="page-section hidden bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">My Coding Tools</h2>
-                <div class="space-y-4">
-                    <!-- Simple Code Editor Card -->
-                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-700">Simple Code Editor</h3>
-                        <p class="text-sm text-gray-500 mb-2">A basic text area to write and save your code.</p>
-                        <textarea rows="10" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Start coding here..."></textarea>
-                    </div>
-                    <!-- Code Formatter Card -->
-                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-700">Code Formatter</h3>
-                        <p class="text-sm text-gray-500 mb-2">Clean up your code and improve readability.</p>
-                        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-300">
-                            Format Code
-                        </button>
-                    </div>
-                    <!-- Syntax Highlighter Card -->
-                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-700">Syntax Highlighter</h3>
-                        <p class="text-sm text-gray-500 mb-2">Visualize code with color-coded syntax.</p>
-                        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-300">
-                            Apply Highlighting
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Upload Files Section -->
-            <div id="upload-page" class="page-section hidden bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">Upload Your Videos, Photos, and Files</h2>
-                <div class="space-y-4">
-                    <!-- Photo Upload -->
-                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <label for="photo-upload" class="block text-sm font-medium text-gray-700 mb-2">Upload Photos</label>
-                        <input type="file" id="photo-upload" accept="image/*" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"/>
-                    </div>
-                    <!-- Video Upload -->
-                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <label for="video-upload" class="block text-sm font-medium text-gray-700 mb-2">Upload Videos</label>
-                        <input type="file" id="video-upload" accept="video/*" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"/>
-                    </div>
-                    <!-- General File Upload -->
-                    <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <label for="file-upload" class="block text-sm font-medium text-gray-700 mb-2">Upload Any Other Files</label>
-                        <input type="file" id="file-upload" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"/>
-                    </div>
-                </div>
-            </div>
-            
-        </main>
-    <div class="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg">
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-6">About Me</h1>
 
+            <!-- About Me Section -->
+            <div id="about-page" class="page-section bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">About Me</h2>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
+                    My name is <span class="font-semibold">Bheemamma Boyini</span>, and I am a recent graduate with a Bachelor of Arts degree. While my academic focus was on the arts, my true passion lies in the world of technology and computers. I have always been fascinated by how things work and am driven by the desire to learn new skills.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
+                    I am currently a trainee at <span class="font-semibold">Deshpande Skills</span>, where I am dedicated to developing my expertise in <span class="font-semibold">ICT (Information and Communications Technology)</span>. This program has allowed me to dive deep into new topics and hone my skills, particularly in coding. I believe that learning is a continuous process, and I thrive on the challenge of understanding things I don't know.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+                    My goal is to use my passion and my growing skills to create and build new things. I am excited to continue my journey in technology and look forward to what I will create next.
+                </p>
+            </div>
+
+            <!-- Projects Page Section -->
+            <div id="projects-page" class="page-section bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">My Projects</h2>
+                <div class="flex items-center space-x-2 mb-6 justify-center">
+                    <input type="text" id="search-input" placeholder="Search projects..." class="w-full max-w-sm p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <button onclick="filterProjects()" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-300">
+                        Search
+                    </button>
+                </div>
+                <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project Cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Uploads Page Section -->
+            <div id="uploads-page" class="page-section bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">Upload Your Media</h2>
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <label for="media-upload" class="block text-base sm:text-lg font-medium text-gray-700 mb-2">
+                            Select photos or videos to preview:
+                        </label>
+                        <input type="file" id="media-upload" accept="image/*,video/*" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"/>
+                        <div id="preview-container" class="mt-4 flex flex-wrap gap-4 justify-center">
+                            <!-- Previews will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
         <!-- Status message box -->
         <div id="message-box" class="fixed bottom-4 right-4 bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg hidden">
             <!-- Message will be inserted here by JavaScript -->
         </div>
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
-            My name is [Your Name], and I am a recent graduate with a Bachelor of Arts degree. While my academic focus was on the arts, my true passion lies in the world of technology and computers. I have always been fascinated by how things work and am driven by the desire to learn new skills.
-        </p>
-
     </div>
+
     <script>
-        // JavaScript for page navigation and functionality
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
-            I am currently a trainee at <span class="font-semibold">Deshpande Skills</span>, where I am dedicated to developing my expertise in **ICT (Information and Communications Technology)**. This program has allowed me to dive deep into new topics and hone my skills, particularly in coding. I believe that learning is a continuous process, and I thrive on the challenge of understanding things I don't know.
-        </p>
+        // Data for mock projects
+        const projects = [
+            {
+                title: "Personal Portfolio Website",
+                description: "A responsive portfolio to showcase my journey and projects in technology. Built with HTML, CSS, and JavaScript.",
+                language: "HTML",
+                githubLink: "#"
+            },
+            {
+                title: "Simple Calculator",
+                description: "A basic calculator application for performing arithmetic operations. A great project for practicing JavaScript logic.",
+                language: "JavaScript",
+                githubLink: "#"
+            },
+            {
+                title: "To-Do List App",
+                description: "A web-based to-do list app to manage daily tasks. Features include adding, deleting, and marking tasks as complete.",
+                language: "HTML",
+                githubLink: "#"
+            },
+            {
+                title: "Weather Dashboard",
+                description: "A simple weather application that displays the current weather for a city. Fetches data from a public weather API.",
+                language: "JavaScript",
+                githubLink: "#"
+            }
+        ];
 
         // Function to show a page and hide others
         function showPage(pageId) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => {
-                if (section.id === `${pageId}-page`) {
-                    section.classList.remove('hidden');
-                } else {
-                    section.classList.add('hidden');
-                }
+                section.classList.remove('active');
             });
+            document.getElementById(`${pageId}-page`).classList.add('active');
+            
+            if (pageId === 'projects') {
+                renderProjects(projects);
+            }
         }
-        // Function for the search button
-        function search() {
-            const query = document.getElementById('search-input').value;
-            if (query.trim() === '') {
-                showMessage("Please enter a search query.");
+
+        // Function to render project cards
+        function renderProjects(projectList) {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+            if (projectList.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500 col-span-full">No projects found. Try a different search term.</p>';
                 return;
             }
-            // This is a placeholder for real search functionality
-            showMessage(`Searching for: "${query}"`);
-            console.log("Search button clicked with query:", query);
-            document.getElementById('search-input').value = ''; // Clear input
+
+            projectList.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105';
+                card.innerHTML = `
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">${project.title}</h3>
+                    <p class="text-sm text-gray-500 mb-2 font-mono">${project.language}</p>
+                    <p class="text-gray-700 text-base leading-relaxed mb-4">${project.description}</p>
+                    <a href="${project.githubLink}" target="_blank" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                `;
+                container.appendChild(card);
+            });
         }
-        // Function to handle file uploads
-        function handleFileUpload(event) {
-            const files = event.target.files;
-            if (files.length > 0) {
-                const fileNames = Array.from(files).map(file => file.name).join(', ');
-                showMessage(`Ready to upload: ${fileNames}`);
-                // In a real application, you would send these files to a server here.
-                console.log("Files selected:", files);
+        
+        // Function to filter projects based on search input
+        function filterProjects() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filtered = projects.filter(project => 
+                project.title.toLowerCase().includes(query) ||
+                project.description.toLowerCase().includes(query) ||
+                project.language.toLowerCase().includes(query)
+            );
+            renderProjects(filtered);
+            if (filtered.length > 0) {
+              showMessage(`Found ${filtered.length} project(s).`);
+            } else {
+              showMessage('No projects found.');
             }
         }
-        // Add event listeners for the file inputs
-        document.getElementById('photo-upload').addEventListener('change', handleFileUpload);
-        document.getElementById('video-upload').addEventListener('change', handleFileUpload);
-        document.getElementById('file-upload').addEventListener('change', handleFileUpload);
+
         // Function to show a temporary message box
         function showMessage(message) {
             const messageBox = document.getElementById('message-box');
@@ -267,26 +199,47 @@ Original file line number	Diff line number	Diff line change
                 messageBox.classList.add('hidden');
             }, 3000); // Hide after 3 seconds
         }
-        // Function to show the welcome banner
-        function showWelcomeMessage() {
-            const welcomeBanner = document.getElementById('welcome-banner');
-            welcomeBanner.style.opacity = '1';
-            setTimeout(() => {
-                welcomeBanner.style.opacity = '0';
-            }, 3000); // Hide after 3 seconds
-        }
-        // Show the welcome message on page load
-        window.onload = showWelcomeMessage;
-    </script>
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
-            My goal is to use my passion and my growing skills to create and build new things. I am excited to continue my journey in technology and look forward to what I will create next.
-        </p>
-    </div>
 
+        // Function to handle file uploads and display previews
+        function handleFileUpload(event) {
+            const files = event.target.files;
+            const previewContainer = document.getElementById('preview-container');
+            previewContainer.innerHTML = ''; // Clear existing previews
+
+            if (files.length > 0) {
+                const fileNames = Array.from(files).map(file => file.name).join(', ');
+                showMessage(`Selected files: ${fileNames}`);
+
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const fileType = file.type.split('/')[0];
+                        if (fileType === 'image') {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.alt = file.name;
+                            img.className = 'w-24 h-24 object-cover rounded-lg shadow-md';
+                            previewContainer.appendChild(img);
+                        } else if (fileType === 'video') {
+                            const video = document.createElement('video');
+                            video.src = e.target.result;
+                            video.controls = true;
+                            video.className = 'w-32 h-24 object-cover rounded-lg shadow-md';
+                            previewContainer.appendChild(video);
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+
+        // Add event listener for the media file input
+        document.getElementById('media-upload').addEventListener('change', handleFileUpload);
+        
+        // Initial page load
+        window.onload = () => {
+          showPage('home');
+        };
+    </script>
 </body>
 </html>
-0 commit comments
-Comments
-0
- (0)
-Comment
