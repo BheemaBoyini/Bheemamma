@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLp3iJ1xRk5k3Q+sX2K4N5h5eP8b8h5C5q9G6uF4H5qK5yB5D8v5C5qP8p8b8h5f8E+2V5b5" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -45,10 +47,26 @@
                 My Portfolio
             </h1>
             <nav class="flex flex-wrap justify-center sm:justify-end gap-2">
-                <button onclick="showPage('home')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">Home</button>
-                <button onclick="showPage('about')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">About Me</button>
-                <button onclick="showPage('projects')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">Projects</button>
-                <button onclick="showPage('uploads')" class="py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">Uploads</button>
+                <button onclick="showPage('home')" class="flex items-center space-x-2 py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">
+                    <i class="fas fa-house"></i>
+                    <span>Home</span>
+                </button>
+                <button onclick="showPage('about')" class="flex items-center space-x-2 py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">
+                    <i class="fas fa-user"></i>
+                    <span>About Me</span>
+                </button>
+                <button onclick="showPage('skills')" class="flex items-center space-x-2 py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">
+                    <i class="fas fa-hammer"></i>
+                    <span>Skills</span>
+                </button>
+                <button onclick="showPage('projects')" class="flex items-center space-x-2 py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Projects</span>
+                </button>
+                <button onclick="showPage('uploads')" class="flex items-center space-x-2 py-2 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-200 transition duration-300">
+                    <i class="fas fa-cloud-arrow-up"></i>
+                    <span>Uploads</span>
+                </button>
             </nav>
         </header>
 
@@ -86,6 +104,41 @@
                         </svg>
                         <span>View my LinkedIn</span>
                     </a>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills-page" class="page-section bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">My Skills</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                        <p class="font-medium text-gray-700">HTML5</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                        <p class="font-medium text-gray-700">CSS3</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fab fa-js text-4xl text-yellow-500 mb-2"></i>
+                        <p class="font-medium text-gray-700">JavaScript</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fas fa-terminal text-4xl text-gray-500 mb-2"></i>
+                        <p class="font-medium text-gray-700">Command Line</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fab fa-git-alt text-4xl text-red-500 mb-2"></i>
+                        <p class="font-medium text-gray-700">Git</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fas fa-globe text-4xl text-blue-600 mb-2"></i>
+                        <p class="font-medium text-gray-700">Web Concepts</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl shadow-md border border-gray-200">
+                        <i class="fas fa-wrench text-4xl text-gray-600 mb-2"></i>
+                        <p class="font-medium text-gray-700">Troubleshooting</p>
+                    </div>
                 </div>
             </div>
 
@@ -177,10 +230,20 @@
                 card.className = 'bg-gray-50 p-6 rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105';
                 card.innerHTML = `
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">${project.title}</h3>
-                    <p class="text-sm text-gray-500 mb-2 font-mono">${project.language}</p>
+                    <p class="text-sm text-gray-500 mb-2 font-mono">
+                        ${project.language.split(',').map(lang => {
+                            let iconClass = '';
+                            const cleanLang = lang.trim().toLowerCase();
+                            if (cleanLang === 'html') iconClass = 'fab fa-html5 text-orange-500';
+                            else if (cleanLang === 'css') iconClass = 'fab fa-css3-alt text-blue-500';
+                            else if (cleanLang === 'javascript') iconClass = 'fab fa-js text-yellow-500';
+                            return `<span class="inline-flex items-center space-x-1 mr-2"><i class="${iconClass}"></i><span>${lang.trim()}</span></span>`;
+                        }).join('')}
+                    </p>
                     <p class="text-gray-700 text-base leading-relaxed mb-4">${project.description}</p>
-                    <a href="${project.githubLink}" target="_blank" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-300">
-                        View on GitHub
+                    <a href="${project.githubLink}" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-300">
+                        <i class="fab fa-github"></i>
+                        <span>View on GitHub</span>
                     </a>
                 `;
                 container.appendChild(card);
@@ -245,14 +308,3 @@
                 messageBox.classList.add('hidden');
             }, 3000); // Hide after 3 seconds
         }
-
-        // Add event listener for the media file input
-        document.getElementById('media-upload').addEventListener('change', handleFileUpload);
-        
-        // Initial page load, showing the "About Me" page by default
-        window.onload = () => {
-          showPage('about');
-        };
-    </script>
-</body>
-</html>
